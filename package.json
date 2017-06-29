@@ -19,5 +19,15 @@
   "bugs": {
     "url": "https://github.com/mdamorg/ui-table/issues"
   },
-  "homepage": "https://github.com/mdamorg/ui-table#readme"
+  "homepage": "https://github.com/mdamorg/ui-table#readme",
+  "dependencies": {
+    "angular": "~1.6.4",
+    "yarn": "^0.24.5"
+  },
+  "devDependencies": {
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-requirejs": "^1.1.0"
+  }
 }

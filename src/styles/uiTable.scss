@@ -1,0 +1,346 @@
+$bk-tablescroll-image-relative-path: '../bower_components/bankia-ui-tablescroll/dist/images' !default;
+
+[bk-tablescroll],
+.bk-tablescroll {
+  $white: #fff;
+  $lightest: #f1f1f1;
+  $light: #c1c1c1;
+  $lightest-gray: #b0b0b0;
+  $gray: #808080;
+
+  background-color: #f1f1f1;
+  position: relative;
+
+  .tablescroll {
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    tfoot {
+      display: none;
+    }
+
+    thead {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      width: auto;
+      // height: 16px;
+    }
+
+    &::-webkit-scrollbar-button {
+      height: 0;
+      width: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $light;
+      border: 2px solid $lightest;
+      border-radius: 0;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: $lightest-gray;
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+      background: $gray;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $lightest;
+      border: 0 solid $lightest;
+      border-radius: 0;
+    }
+
+    &::-webkit-scrollbar-track:hover {
+      background: lightest;
+    }
+
+    &::-webkit-scrollbar-track:active {
+      background: lightest;
+    }
+
+    &::-webkit-scrollbar-corner {
+      background: transparent;
+    }
+
+    $button-bg-decrement: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="6" height="6"><path transform="scale(0.011)" d="M281 131c-13-13-35-13-48 0l-221 221c-13 13-8 23 10 23l470 0c18 0 22-10 9-23z"/></svg>');
+    $button-bg-decrement-active: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="6" height="6"><path fill="#fff" transform="scale(0.011)" d="M281 131c-13-13-35-13-48 0l-221 221c-13 13-8 23 10 23l470 0c18 0 22-10 9-23z"/></svg>');
+    $button-bg-increment: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="6" height="6"><path transform="scale(0.011)" d="M233 365c13 14 35 14 48 0l220-220c13-13 9-24-9-24l-470 0c-18 0-23 11-10 24z"/></svg>');
+    $button-bg-increment-active: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="6" height="6"><path fill="#fff" transform="scale(0.011)" d="M233 365c13 14 35 14 48 0l220-220c13-13 9-24-9-24l-470 0c-18 0-23 11-10 24z"/></svg>');
+
+    &::-webkit-scrollbar-button:vertical {
+      background-color: $lightest;
+      background-position: center;
+      background-repeat: no-repeat;
+      // background-attachment: fixed;
+    }
+
+    &::-webkit-scrollbar-button:vertical:active {
+      background-color: $lightest;
+      color: #fff;
+    }
+
+    &::-webkit-scrollbar-button:vertical:hover {
+      background-color: $light;
+      color: #fff;
+    }
+
+    &::-webkit-scrollbar-button:vertical:decrement {
+      background-image: $button-bg-decrement;
+      height: 12px;
+    }
+
+    &::-webkit-scrollbar-button:vertical:decrement:active {
+      background-color: $gray;
+      background-image: $button-bg-decrement-active;
+    }
+
+    &::-webkit-scrollbar-button:vertical:increment {
+      background-image: $button-bg-increment;
+      background-position: center 4px;
+      height: 30px;
+    }
+
+    &::-webkit-scrollbar-button:vertical:increment:active {
+      background-color: $gray;
+      background-image: $button-bg-increment-active;
+    }
+  } // .tablescroll
+  // view more button
+
+  .view-more {
+    bottom: 16px;
+    float: right;
+    height: 0;
+    position: relative;
+    right: -2px;
+
+    &:hover .more-results-button {
+      background-image: linear-gradient($light, $light);
+    }
+
+    .more-results-button {
+      background-image: linear-gradient($lightest, $lightest);
+      background-position: center center;
+      background-size: 100%;
+      border: 0;
+      border-bottom: 1px solid $lightest;
+      color: #35261a;
+      font-family: verdanta, arial, sans-serif;
+      font-size: 12px;
+      font-weight: normal;
+      line-height: normal;
+      padding-bottom: 3px;
+      padding-left: 3px;
+      padding-right: 4px;
+      padding-top: 3px;
+      position: relative;
+      right: 2px;
+      text-decoration: none;
+      vertical-align: top;
+      width: 15px;
+      z-index: 9;
+
+      [class*="bki-"] {
+        display: block;
+        font-size: 8px;
+      }
+
+      &::before {
+        bottom: -1px;
+        content: '';
+        display: block;
+        left: 0;
+        padding-bottom: 1px;
+        position: absolute;
+        width: 100%;
+        z-index: 10;
+      }
+
+      &:active {
+        background-image: linear-gradient($gray, $gray);
+        color: $white;
+      }
+
+      &[disabled],
+      &.disabled {
+        color: $light;
+
+        &:hover {
+          background-image: linear-gradient($lightest, $lightest);
+        }
+      }
+    } // .more-results-button
+  } // .view-more
+
+  table {
+    margin: 0;
+    table-layout: fixed;
+  }
+
+  .table thead tr {
+    th,
+    td {
+      &.scroll {
+        padding-left: 0;
+        width: 16px;
+      }
+    }
+  }
+}
+
+// old Java styles
+[bk-tablescroll]:not(.native-scroll-webkit) {
+
+  &.disapear-viewmore {
+    .view-more {
+      display: none;
+    }
+
+    .tablescroll::-webkit-scrollbar-button:vertical:increment {
+      height: 14px;
+    }
+  }
+
+
+  .tablescroll {
+    // It is the main scrollbar container.
+
+    &::-webkit-scrollbar {
+      width: 16px;
+    }
+
+    &::-webkit-scrollbar-button:start:decrement,
+
+    &::-webkit-scrollbar-button:end:increment {
+      display: block;
+    }
+
+    &::-webkit-scrollbar-button:vertical:start:increment,
+
+    &::-webkit-scrollbar-button:vertical:end:decrement {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-button:vertical:decrement {
+      background: url($bk-tablescroll-image-relative-path + '/img-arrow-up.png') no-repeat 5px 7px;
+      background-color: #f0f0f0;
+      -moz-box-shadow: inset 2px 0 4px 0 #e4e4e4;
+      -webkit-box-shadow: inset 2px 0 4px 0 #e4e4e4;
+      box-shadow: inset 2px 0 4px 0 #e4e4e4;
+      height: 18px;
+    }
+
+    &::-webkit-scrollbar-button:vertical:increment {
+      background: url($bk-tablescroll-image-relative-path + '/img-arrow-down.png') no-repeat 5px 7px;
+      background-color: #f0f0f0;
+      -moz-box-shadow: inset 2px 0 4px 0 #e4e4e4;
+      -webkit-box-shadow: inset 2px 0 4px 0 #e4e4e4;
+      box-shadow: inset 2px 0 4px 0 #e4e4e4;
+      height: 36px;
+    }
+    // This styles the main track of the scollbar.
+
+    &::-webkit-scrollbar-track-piece {
+      background-color: #f0f0f0;
+      border-right: 1px solid #eaeaea;
+      -moz-box-shadow: inset 2px 0 4px 0 #e4e4e4;
+      -webkit-box-shadow: inset 2px 0 4px 0 #e4e4e4;
+      box-shadow: inset 2px 0 4px 0 #e4e4e4;
+    }
+    // This styles the thumb of the scrollbar.
+
+    &::-webkit-scrollbar-thumb:vertical {
+      background-image: linear-gradient(to right, #f4f4f4 0%, #e8e8eb 50%, #dadadc 50%, #c7c7cc 100%);
+      border: 1px solid #959595;
+      -moz-border-radius: 2px;
+      -webkit-border-radius: 2px;
+      border-radius: 2px;
+      -moz-box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #fff;
+      -webkit-box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #fff;
+      box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #fff;
+    }
+
+    .view-more {
+      bottom: 16px;
+      float: right;
+      height: 0;
+      position: relative;
+      right: -2px;
+
+      &:hover {
+
+        .more-results-button {
+          background-image: linear-gradient(#958a7e, #817568);
+          border: 1px solid #83766a;
+          border-radius: 2px;
+          box-shadow: #787a74 0 2px 1px -1px, 0 0 0 0;
+
+          &[disabled] {
+            background-color: #f1f1f1;
+            background-image: linear-gradient(#f9f9f9, #f1f1f1);
+            border: 1px solid #dbdbdb;
+            box-shadow: #787a74 0 2px 2px -1px, inset 0 1px 0 0 #fff;
+
+            [class*="bki-"] {
+              color: #9c9c9c;
+            }
+          }
+
+          [class*="bki-"] {
+            color: $white;
+          }
+        }
+      }
+
+      .more-results-button {
+        background-color: #f1f1f1;
+        background-image: linear-gradient(#fbfbfb, #f1f1f1);
+        background-size: 100%;
+        border: 1px solid transparent;
+        border-left-color: #dbdbdb;
+        border-radius: 2px;
+        border-right-color: #dbdbdb;
+        border-top-color: #dbdbdb;
+        box-shadow: #787a74 0 2px 1px -1px, inset 0 1px 0 0 #fff;
+        color: #35261a;
+        font-family: verdanta, arial, sans-serif;
+        font-size: 12px;
+        font-weight: normal;
+        line-height: normal;
+        padding-bottom: 0;
+        padding-left: 4px;
+        padding-right: 4px;
+        padding-top: 3px;
+        position: relative;
+        text-decoration: none;
+        vertical-align: top;
+        z-index: 9;
+
+        [class*="bki-"] {
+          display: block;
+          font-size: 8px;
+        }
+
+        &::before {
+          bottom: -1px;
+          content: '';
+          display: block;
+          left: 0;
+          padding-bottom: 1px;
+          position: absolute;
+          width: 100%;
+          z-index: 10;
+        }
+      }
+    }
+
+    &.nonscroll {
+      &::-webkit-scrollbar-button:vertical:increment {
+        height: 14px;
+      }
+    }
+  }
+}

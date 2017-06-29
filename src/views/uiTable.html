@@ -1,0 +1,12 @@
+<div ng-class="{'disapear-viewmore': !bkViewMore}" class="bk-tablescroll bk-table">
+  <table class="table tablescroll-head">
+    <thead></thead>
+  </table>
+  <div ng-transclude="ng-transclude" ng-class="{nonscroll: hideScroll()}" class="tablescroll"></div>
+  <div class="view-more">
+    <button ng-click="viewMore()" ng-disabled="isDisabled()" class="more-results-button"><span class="bki-following-results"></span><span class="sr-only">Ver más resultados en la tabla</span></button>
+  </div>
+  <table class="table tablescroll-foot">
+    <tfoot></tfoot>
+  </table>
+</div>
