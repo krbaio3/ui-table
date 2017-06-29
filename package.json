@@ -1,0 +1,23 @@
+{
+  "name": "ui-table",
+  "version": "0.0.0",
+  "description": "Componente generico de creacion de tablas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdamorg/ui-table.git"
+  },
+  "keywords": [
+    "table",
+    "ui-table"
+  ],
+  "author": "Maria Dolores A",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdamorg/ui-table/issues"
+  },
+  "homepage": "https://github.com/mdamorg/ui-table#readme"
+}

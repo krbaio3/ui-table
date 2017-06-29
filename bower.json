@@ -1,0 +1,22 @@
+{
+  "name": "ui-table",
+  "description": "Componente generico de creacion de tablas",
+  "main": "index.js",
+  "authors": [
+    "Maria Dolores A"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "table",
+    "ui-table"
+  ],
+  "homepage": "https://github.com/mdamorg/ui-table",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
