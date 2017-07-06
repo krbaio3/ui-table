@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require("webpack");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const basePath = __dirname;
 
 if (process.argv.indexOf('-p') !== -1) {
@@ -63,10 +64,16 @@ module.exports = {
             "jQuery": "jquery",
             "$": "jquery"
         }),
-        new CopyWebpackPlugin([{
-            from: './index.html',
-            to: './index.html',
-        }]),
+        // new CopyWebpackPlugin([{
+        //     from: './index.html',
+        //     to: './index.html',
+        // }]),
+        new HtmlWebpackPlugin({
+            title: 'Cancelacion de carteras',
+            filename: 'index.html', // nombre del fichero que va a tener de salida
+            template: 'index.html', // opcional: si hay varios html de entrada, se selecciona esta propiedad para seleccionar el html de entrada
+            hash: true, //al bundle le añade un token para evitar que se caché
+        }),
     ],
     devtool: 'inline-source-map',
     devServer: {
