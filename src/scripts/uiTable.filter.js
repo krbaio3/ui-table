@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-import moduleName from './module';
+import moduleName from './uiTable.module';
 
 angular.module(moduleName)
   .filter('paginate', paginateFilter);

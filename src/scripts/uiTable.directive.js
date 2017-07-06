@@ -1,8 +1,8 @@
 import angular from 'angular';
 
-import moduleName from './module';
+import moduleName from './uiTable.module';
 
-var templateUrl = require('../pug/tablescroll.pug');
+var templateUrl = require('../views/uiTable.html');
 
 angular
   .module(moduleName)

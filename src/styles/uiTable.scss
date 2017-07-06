@@ -1,8 +1,9 @@
-$bk-tablescroll-image-relative-path: '../bower_components/bankia-ui-tablescroll/dist/images' !default;
+$bk-tablescroll-image-relative-path: '../assets/img' !default;
+$white: #fff;
 
 [bk-tablescroll],
 .bk-tablescroll {
-  $white: #fff;
+  
   $lightest: #f1f1f1;
   $light: #c1c1c1;
   $lightest-gray: #b0b0b0;
