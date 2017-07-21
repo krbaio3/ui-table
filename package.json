@@ -8,7 +8,7 @@
     "clean": "rimraf dist",
     "prestart": "npm run clean",
     "postinstall": "npm dedupe",
-    "start": "webpack-dev-server --open",
+    "start": "webpack-dev-server --debug --progress --colors --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
